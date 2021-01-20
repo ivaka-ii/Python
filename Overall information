@@ -7,3 +7,4 @@ print("... \n ...")  -- print text in new line
 print("... \b ...")  -- print with backspace (not always)
 print("... \t ...")  -- print with tab
 print('... \' ...')  -- print with escaping character to be treated as quotation
+print('... \a' ...')  -- print with alerting sound
