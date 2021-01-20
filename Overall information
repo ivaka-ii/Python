@@ -1,0 +1,9 @@
+=====================================================
+              Basic information
+=====================================================
+print()         --prints anything in the braces
+print(f"")      -- print text with stored variables
+print("... \n ...")  -- print text in new line
+print("... \b ...")  -- print with backspace (not always)
+print("... \t ...")  -- print with tab
+print('... \' ...')  -- print with escaping character to be treated as quotation
