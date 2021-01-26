@@ -1,6 +1,20 @@
 =====================================================
               Basic information
 =====================================================
+del [variable]      --deletes given variable
+variable name           -- contains letters, numbers and underscore, it shouldn't be keyword from Python
+                        don't contain space, don't start with number, they are case sensitive
+
+types of data
+----------------------------------------------------
+int, float, complex
+strings
+boolean
+
+!you can transition from numbers -> strings or booleans
+
+                    print
+----------------------------------------------------
 print()         --prints anything in the braces
 print(f"")      -- print text with stored variables
 print("... \n ...")  -- print text in new line
@@ -8,3 +22,6 @@ print("... \b ...")  -- print with backspace (not always)
 print("... \t ...")  -- print with tab
 print('... \' ...')  -- print with escaping character to be treated as quotation
 print('... \a' ...')  -- print with alerting sound
+
+print(type(variable))      -- prints the type of a variable
+print(id(variable))         -- prints the location in the memory of the variable
