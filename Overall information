@@ -12,11 +12,16 @@ strings
 boolean
 
 !you can transition from numbers -> strings or booleans
+!you can save f""(format) with strings and variables into 1 variable and then print it
+
+'''
+code block        -- multiple line commenting
+'''
 
                     print
 ----------------------------------------------------
 print()         --prints anything in the braces
-print(f"")      -- print text with stored variables
+print(f"")      -- print text with stored variables with format
 print("... \n ...")  -- print text in new line
 print("... \b ...")  -- print with backspace (not always)
 print("... \t ...")  -- print with tab
@@ -25,3 +30,4 @@ print('... \a' ...')  -- print with alerting sound
 
 print(type(variable))      -- prints the type of a variable
 print(id(variable))         -- prints the location in the memory of the variable
+print("{}\n{}\n{}".format(var1,var2,var3))        -- prints variables in {} with unique characters(new line)
