@@ -32,7 +32,23 @@ print([variable].lstrip(' '))    --this operation strips(deletes) from the varia
 print([variable].rstrip(' '))    --this operation strips(deletes) from the variable from the right
 [variable].strip('').strip('')   -- performs multiple strip operations
 [variable].split()               -- performs SPLIT operations and it gives LIST format of the files
-[variable].split('string')       -- performs split operation and excludes the string from the output   
+[variable].split('string')       -- performs split operation and excludes the string from the output  
+
+count,index and find operations
+----------------------------------------------------
+[variable] = "[string]"
+
+[variable].count('[character\word]')			-- prints how many characters are in the [variable]'s string
+
+[variable].index('[character\word]')			-- prints in which index the character is located
+[variable].index('[character\word],[index]')	-- prints the number of index of character after the pointed [index]
+
+[variable].find('[character\word]')				-- similar to index operation
+[variable].find('[character\word],[index]')		-- show where in the [string] is the character\word after the [index]
+!if the find operation is giving you '-1'		-- this tells you that there is no such character\word
+
+!mode				-- shows information about the terminal window in windows
+!tput col			-- shows information about the number of colums in Linux
 
 !you can transition from numbers -> strings or booleans
 !you can save f""(format) with strings and variables into 1 variable and then print it
