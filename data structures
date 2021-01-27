@@ -29,3 +29,72 @@ print(variable_list[:])                         -- prints the variable list from
 variable_list[index]=[new value]        -- modifies the variable list [index]
 
 print(variable_list.index([search char,from index]))        --prints the index of search char, based on the input index from left to right
+print(variable_list.count([search char])					--prints how many times the [search char] is met in the list
+variable_list.clear()					--clears the lists of any data
+
+var_list1=var_list.copy()				--not only gives new value to var_list1, but also provides new memory id for the var_list1
+
+variable_list.append(new variable/variable_list)		--appends the new variable at the end of the var_list as exactly as they are typed
+variable_list.insert([index],new variable)		--inserts the new variable after the given [index]
+
+var_list2=[new_var1,new_var2]	
+variable_list.extend(var_list2)	        --inserts the data into the list as normal variables
+
+var_list.remove(char)					--removes the given char from the list
+
+var_list.pop()					--removes the last index of var_list
+var_list.pop([index])			--removes the given index from var_list
+
+var_list.reverse()				--reverse the given data in the var_list
+var_list.sort()					--sorts the data in numeral and alphabetical order
+!you can first sort, then reverse data to get reversed and sorted data
+
+
+				Tuples
+-----------------------------------------------------
+-Tuples are immutable, the values cannot be changed
+var_tuple=(4,5,2,[5,8,3],5)			--example of tuple
+dir(var_tuple)						--shows all the options with tuples
+
+var_tuple.index				--as index with var_list
+len(var_tuple)				-- shows the lenght of the var_tuple
+
+variable = 5,3,6			-- whith ',' comma, the numbers are becoming tuple data structures 
+
+				Dictionaries
+-----------------------------------------------------
+var_dict={}					--example of dictionary
+var_dict={key1:value1, key2:value2, key3: value3}		--example of a dictionary with keys and values, when both are strings,
+														  there is quotation''
+var_dict[key4]=value4			-- adds another key to var_dict
+y=var_dict.copy()				-- copies var_dict into new var_dictionary with different id
+
+var_dict2={key5:value5}
+var_dict.update(var_dict2)		-- updates the var_dict data structure		
+
+var_dict.pop(key5)				-- removes the pair item (key:value) based on input key	
+var_dict.popitem()				-- removes randomly an item from var_dict
+
+keys=[list of values]
+new_var_dict=dict.fromkeys(keys)		--makes dictionary from the 'keys' variable without any values attached to the keys
+
+var_dict.setdefault('key',value)		--assigns and updates item from var_dict
+!if there is 'key' there in the var_dict, it will update it's value with the new typed value
+!if it's not there - it will create one
+
+print(var_dict)					--prints the dictionary
+print(var_dict[key1])			--prints value1
+print(var_dict.get('key2'))	    --prints value2
+!if there is no key assigned with print(var_dict.get('key2')), the output will be 'none', not an error
+print(var_dict.keys())			--prints all the keys in var_dict
+print(var_dict.values())		--prints all the values in var_dict
+print(var_dict.items())			--prints key:value as an items in the dictionary
+
+dir(var_dict)				-- gets all the available operations with dictionaries
+
+
+					Sets
+-----------------------------------------------------
+sets are called an ordered collection of data
+set(var_list)		--it will give the list in ordered set of data
+dir(set)			--list all the different operations with set
