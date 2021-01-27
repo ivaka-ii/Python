@@ -1,0 +1,9 @@
+=====================================================
+              Python modules
+=====================================================
+
+				os parameters
+-----------------------------------------------------
+import os
+
+[variable] = os.get_terminal_size().columns		-- get automatically the width of the terminal size
