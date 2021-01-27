@@ -1,0 +1,31 @@
+=====================================================
+               Python Data Structures 
+=====================================================
+overall information
+----------------------------------------------------
+-data structures are used to store collection of any type of data
+-there are four built-in data structures
+    -lists --> []
+    -Tuple --> ()
+    -Dictionary --> {} with key value pair
+    -Set --> {}
+
+
+				lists
+-----------------------------------------------------
+-Lists are mutable, strings are immutable
+boolean(empty_list) ==> False
+boolean(non-empty_list) ==> True
+
+dir(variable_list)                              --shows the optional commands with variable list
+
+-data structures also have indexes
+print(variable_list,type(variable_list))        --shows the class of the variable as class 'list'
+print(variable_list[index])                     --prints the [index] of the variable list
+print(variable_list[index][index])              --prints the [index] of the [index] of the variable list
+print(variable_list[:])                         -- prints the variable list from start to end
+
+[variable] = [1,3,5.6,[string],4]		-- example of list or data structure
+variable_list[index]=[new value]        -- modifies the variable list [index]
+
+print(variable_list.index([search char,from index]))        --prints the index of search char, based on the input index from left to right
