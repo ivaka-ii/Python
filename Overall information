@@ -11,6 +11,29 @@ int, float, complex
 strings
 boolean
 
+basic operations on strings
+----------------------------------------------------
+x = "string"
+y = x.lower() 
+print(y)                        -- prints the string with lower cases
+.upper                          -- prints the string with all capital letters
+dir([variable])                 -- prints the varios commands on the string
+.is[operation]([variable])      -- returns booleans checking the output result
+z ="-".join(x)                  -- print s-t-r-i-n-g, special characters can be used also
+print(x.center(20))             --prints up the string centrelized with the defined spaces in the brackets
+print(x.zfill(10))              --prints up the string with filled 0s in the defined brackets's space
+
+stripe, split operations
+----------------------------------------------------
+[variable] = "[string]"
+
+print([variable].strip(' '))     --this operation strips(deletes) from the variable at the begining or the end
+print([variable].lstrip(' '))    --this operation strips(deletes) from the variable from the left
+print([variable].rstrip(' '))    --this operation strips(deletes) from the variable from the right
+[variable].strip('').strip('')   -- performs multiple strip operations
+[variable].split()               -- performs SPLIT operations and it gives LIST format of the files
+[variable].split('string')       -- performs split operation and excludes the string from the output   
+
 !you can transition from numbers -> strings or booleans
 !you can save f""(format) with strings and variables into 1 variable and then print it
 
