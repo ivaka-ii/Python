@@ -4,6 +4,8 @@
 del [variable]      --deletes given variable
 variable name           -- contains letters, numbers and underscore, it shouldn't be keyword from Python
                         don't contain space, don't start with number, they are case sensitive
+ord('variable')			--gives the number of variable to ASCII code
+chr('number of char')		--gives the character from the number of the ACII code
 
 types of data
 ----------------------------------------------------
@@ -70,3 +72,71 @@ print('... \a' ...')  -- print with alerting sound
 print(type(variable))      -- prints the type of a variable
 print(id(variable))         -- prints the location in the memory of the variable
 print("{}\n{}\n{}".format(var1,var2,var3))        -- prints variables in {} with unique characters(new line)
+
+====================================================
+				    	Operators
+====================================================
+Operators are the pillars for any language.
+The operator can be defined as a symbol which is responsibe for a particular operation between two operands.
+Operands may be values or variables or combination of both.
+Python provides variety of operators described as follows:
+-Arithmetic Operators	}    Takes values as inputs, performs its operation on input values and gives values as output
+-Assignment Operators	}
+-Comparison Operators		}	Takes values as inputs, perform its operation on input values
+-Identity Operators			}	and gives output as either True or False
+-Membership Operators		}
+-Logical Operators		} Takes True or False as inputs, performs operation on this inputs and give output as either True or False
+-Bitwise Operators			} Takes values as input, performs operations on its binary representation and gives output as a value
+
+
+				        Arithmetic Operators
+----------------------------------------------------
+Exponential**			-- 5**3 = 5*5*5
+Modulo%					-- 7%2 = 1; 8%2=0
+Floor division//		-- it gives the lower integer from float result (7//2=3;-9//2=-5)
+
+                Assignment Operators
+----------------------------------------------------
+=	+=	-=	*=	/=	  %/ 
+a += b 	==   a+b		
+
+
+				      Comparison Operators
+----------------------------------------------------
+>	<	>=		<= 		!= (not equal to)		==(equal)
+
+
+			Identity and Membership Operators
+----------------------------------------------------
+Identity operators are used to find the type of: class/type/object.
+There are two types of Identity operators:
+	-is
+	-is not
+	
+Membership operators are used to validate the membership of a value
+There are two types of Membership operators:
+	-in
+	-not in
+Ex.:
+valid_java=['1,6','1.7','1,8','1,9'] 
+host_java="1.5"
+
+if host_java in valid_java:
+	print("host consist of valid java version")
+else:
+	print("host consist of invalid java version")
+
+
+					Logical Operators
+----------------------------------------------------
+Logical operators are useful to combine multiple conditions
+They are thee type of logical operators in python:
+They are:
+	-and			-- if anyone of the conditions is False, the result is also False
+	-or				-- if anyone of the conditions is True, the result is also True
+	-not			-- not True ==> False, not False ==> True 
+	
+Mutiple logical operator:
+all([1condtition,2condition,3condition,4condition])		all==and between all conditions
+any([1condtition,2condition,3condition,4condition])		all==or between all conditions
+
