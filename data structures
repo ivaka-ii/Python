@@ -56,11 +56,12 @@ var_list.sort()					--sorts the data in numeral and alphabetical order
 var_tuple=(4,5,2,[5,8,3],5)			--example of tuple
 dir(var_tuple)						--shows all the options with tuples
 
+
 var_tuple.index				--as index with var_list
 len(var_tuple)				-- shows the lenght of the var_tuple
 
 variable = 5,3,6			-- whith ',' comma, the numbers are becoming tuple data structures 
-
+var1,var2,var3 = 5,3,6			-- assigns each tuple(left side) with a value(right side)
 				Dictionaries
 -----------------------------------------------------
 var_dict={}					--example of dictionary
