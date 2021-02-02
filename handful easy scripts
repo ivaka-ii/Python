@@ -9,7 +9,7 @@ else:
     os.system("clear")
     
 --------------------------------------------------    
-Search a file in every system
+Search a file in every OS system
 --------------------------------------------------
 import os
 import string
