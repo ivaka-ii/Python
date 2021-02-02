@@ -1,0 +1,61 @@
+=====================================================
+              Loops
+=====================================================
+All programing languages need a way to execute block of code many times, this is possible with loops
+Python has two types of loops:
+	for loop
+	while loop
+	
+-for loop -- used to iterate over a sequence(list,tuple,string) or other iterable objects
+-while loop -- while loop is used to execute a block of statements repeatedly until a given condition is satisfied
+
+loops is repeating task of Python
+each repetition is called iteration
+
+			For loop
+------------------------------------------------------------
+for [variable] in [list]
+when it is loop, Python is looking after what is after "in"
+
+my list=[value1,value2,value3...]
+
+for each_value in my list "(or)" [value1,value2,value3...]:
+	print(each_value):
+
+for each in [list]:
+	print ("hello", each)		--this script will print every time hello with the all of the numbers of the list
+
+!for		--starting keyword for loop
+!each 		--prints every line under the loop
+
+each_char		--Python takes each character in string for a loop
+!print("string", each_char)		--Python will print iteractions with the given characters + the chars
+each_value		--Python will print each value of the list along with given string
+
+					Range funcion
+--------------------------------------------------------
+range(funcion)		-- built in Python value, which makes integers from a range pf numbers, or makes range objects
+syntax of range:
+	range(start,stop,step)
+	3 arguments ==> By default if it is one argument is stop, if there is two is start/stop, 3 - start, stop, step
+	
+						While loop
+------------------------------------------------------------
+While loop in Python is used to iterate over a block of code as long as the test expression (condition) is True
+We generally use this loop when we don't know beforehand, the number of times to iterate.
+
+
+while True:
+	print("string")						--prints ("string") infinite number of times
+
+value=[number]
+while value <= condition:
+	print(value)
+	value=value+condition				-- prints the (value) until condition is met
+	
+						Loop control statements
+------------------------------------------------------------
+Control statements:
+-break				--breaks the loop 
+-continue			--just skips/mask the code within the code block for continue and the loop proceeds
+-pass				-- it just passes the loop and don't trigger output error
