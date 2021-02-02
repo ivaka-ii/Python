@@ -1,9 +1,151 @@
 =====================================================
               Python modules
 =====================================================
+Definition - A module is a file, containing Python definitions and statements.
+That means, module containing python functions, classes and variables.
+there are default modules in Python:
 
-				os parameters
+help("modules")		--prints all installed modules within Python
+help(module)		--shows specific information about a module - descriptions, functions and defined data
+
+!!!import [module]		--imports module in the python script file!!!
+!If you are using module, first you have to import it
+import [module] as [m] 		-- creates an alias with the module and we can use short abreviation or name of a module
+import [module1],[module2]... 		--imports more than one module
+
+dir(module)			--shows all operations within a [module]
+
+
+-math			--prints some well known numbers as pi
+
+Use of modules:
+- reusability			-- you create a python file with variables, next from other python file, you just
+						add "import python filename without .py" in the begining of the script
+						then print(python filename.variable in it)
+
+-types of modules		--Default modules
+						--Third party modules
+!Using Third party modules, you should first have to install them with pip(from the python folder)
+
+from [module] import *(or specific function)		--imports all,mutiple or specific function of a module and it is 
+from [module] import [func1],[func2]...				not necessary to print them with ([module].[module's function])
+
+
+				Platform module
 -----------------------------------------------------
+The platform module is used to access the underlying platform data such as hardware, 
+OS and interpreter version info
+platform=pf
+.system			--prints the system name 
+ex:				--print(f"This is {pf.system} os")
+.machine		--shows the processor model
+.release 		--shows the processor OS release
+.platform		--shows the version of the OS
+.architecture		--shows the architecture of the OS 
+.node			--prints the node's name
+.uname			-- prints all the information of the system
+
+				Getpass module
+-----------------------------------------------------
+getpass()		--prompts the user for a passwordwithout echoing. The getpass module
+				provides a secure way to handle the password prompts where programs interact
+				with users via the terminal
+getuser()		-- function displays the login name of the user. This function checks the environment
+				variables LOGNAME, USER, LNAME and USERNAME, in order and returns the value
+				of the first non-empty string
+				
+				Sys module
+-----------------------------------------------------
+The sys module provides functions and variables used to manipulate different parts of the 
+Python environment
+
+dir(sys), help(sys)
+
+.platform			--shows which platform version Python is installed on OS
+.version			-- shows python version
+.version_info		-- shows more info about the Python's version
+.path				-- shows all the files from where python is running the dictionaries and libraries
+						environment variable for Python
+.exit				-- operation which stop the Python scripting
+
+!!!sys.argv			--returns a list of commands line args passed to a Python script
+					passing command line values to python script
+whith sys module imported, the py file is now avaible for adding variables or values in lists
+whatever you are passing to the python scrip from CLI, it is recognised as a string, even it is a number
+
+print(sys.argv[0])	-- prints the 1st index of the sys.argv module, which is "command_line_arguments.py"
+
+
+					OS Module
+-----------------------------------------------------
+This module is used to work/interact with the OS to automate many more tasks
+like creating directory, removing directory, identifying current directory and many more
 import os
+
+os
+os.sep							--shows the OS separator (ex. Windows is \ and Linux is /)
+!good practice When using os.sep for windows make sure to use double slashes(\\) about the path as python is getting special character
+os.getcwd()						--always print working directory ()may use cwd=os.getcwd()
+os.chdir("<directory path>")	--changes the path to <directory path>
+os.listdir()					--list contents of  working directory
+os.listdir(<directory path>)	--list contents of given path			
+os.mkdir(<directory name\path>)		--makes new directory 
+os.makedirs(<directory name\path>)	--recursive directory creation function
+os.remove(<directory name\path>)	--removes directory
+os.removedirs(<directory name\path>)	--recursive remove of directories
+os.rmdir(directory path)			--removes directory
+os.rename(<source location>, <destination location>)	--renames file name (both should be strings)
+os.environ				--prints all the environment variables of the system
+os.getuid				--prints user id
+os.gid					--print group id
+os.pid					--print process id of current running process
+
+					os.path
+-----------------------------------------------------
+os.path is a sub module of os			--used to work on paths
+os.path.sep							--shows the OS separator (ex. Windows is \ and Linux is /)
+os.path.basename(path)				--prints the basename of the given path as a variable (path=<directory path>)
+os.path.dirname(path)				--prints the full path of the given path
+os.path.join(path1,path2)			-- joins given path1 + path2 +... and python provides the OS separator for directories 
+os.path.split(path)					--splits the path in dirname path and basename path
+os.path.getsize(path)				-- shows the size in bytes
+os.path.exist(path)						-- shows boolean statement for path if it is exist True, or not - False
+os.path.isfile(path)				-- it shows boolean if the path is file 
+os.path.isdir(path)					-- it shows boolean if the path is directory
+!isfile and isdir are perfect in determing whether path is file or directory
+os.path.islink(path)				--shows boolean for is the path - link
+
+/part of with Python time module 
+os.path.getatime(path)		--provides access time of 
+os.path.getctime(path)		--provides creation time
+os.path.getmtime			--provides modify time
+
+					os.system()
+-----------------------------------------------------
+Used to execute os commands
+os.system("<os_command>")		-- if you are getting 0, the cmd is performed successfully
+
+Ex.: 
+import os
+path="PATH"
+#print(list(os.walk(path)))
+
+for r,d,f in os.walk(path):
+	print(r,d)			--prints all the other directories from PATH
+	print(r,f)			--prints all the files
+	(optional) if len(f) != 0:
+		print(r,f)					--this prints only files, where they exist
+		for each_file in f:
+			print(each_file)		--prints a list of each file in the directories
+			print(os.path.join(r,each_file))		--prints all files with complete path to them
+		print("-----------------")	--separates the files from different directories
+
+!optional for r,d,f in os.walk(path,topdown)	-- prints the list in reverse mode, from bottom to up
+
+					os.walk(path)
+-----------------------------------------------------
+This module is very useful for creating list of directories and files on given Path
+This lists are basically tuples.
+The tuple consists of [PATH], [directories] and [files]
 
 [variable] = os.get_terminal_size().columns		-- get automatically the width of the terminal size
