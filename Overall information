@@ -162,10 +162,115 @@ else everything else:
 	print("Text4")
 
 =====================================================
-		Exception handling
+			Exception handling
 =====================================================
 A Python program terminates as soon as it encounters an error
 errors are two types:
 -syntax errors : no way to handle syntax errors
 -Runtime errors  --> exceptions, There is a way to handle those exceptions
 !We are handling exceptions with codint "try" and "except" block
+
+
+			working with exceptions
+----------------------------------------------------
+'''
+print("Welcome to exceptions concept")
+print("Now it is fine")
+fo=open("nari.txt")
+'''
+
+'''
+try:
+	fo=open("nari.txt")
+	print(fo.read())
+	fo.close()
+except Exception as e:
+	print(e)
+	'''
+
+my_list=[3,4,5]
+
+'''
+
+try:
+	print(my_list[4])
+except Exception as e:
+	print(e)
+'''
+
+#print(my_list[4])
+
+#print("This code will also execetues")
+
+try:
+	import fabric
+except Exception as e:
+	print(e)
+
+
+	exceptions handling for known exceptions
+----------------------------------------------------
+#NameError
+#TypeError
+#FileNotFoundError
+#ZeroDivisionError
+
+try:
+	print("This is try block")
+	import fabric
+	print(a)
+	#print(4+"hi")
+	#open('asdfas.txt')
+	#print(5/0)
+	
+except FileNotFoundError:
+	print("File is not present to open it")
+except NameError:
+	print("Variable is not defined")
+except TypeError:
+	print("Adding number and string is not possible")
+except ZeroDivisionError:
+	print("Division with zero is not possible")
+except ModuleNotFoundError:
+	print("Please install fabric to use it")
+except Exception as e:
+	print(e)
+finally:
+	print("Finally this will executes")
+	
+		Difference between try except finally and try except else
+------------------------------------------------------------------
+try:
+	a=9
+	print(a)
+except NameError:
+	print("Variable is not defined")
+except Exception as e:
+	print("Exception occured:",e)
+else:
+	print("This will execute if there is no exceptions in try block")
+finally:
+	print("This will executes always")
+	
+		Raise user defined exception
+--------------------------------------------------------------------
+'''
+
+age=23
+
+if age>30:
+	print("Valid age")
+else:
+	raise ValueError("Age is less than 30")
+
+'''
+age=20
+
+try:
+	assert age>30
+	print("Valid age")
+except AssertionError:
+	print("Raised with assert because age is less than 30")
+except:
+	print("Exception occured")
+
