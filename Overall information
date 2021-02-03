@@ -144,7 +144,7 @@ any([1condtition,2condition,3condition,4condition])		all==or between all conditi
 
 
 =====================================================
-					Conditions
+		Conditions
 =====================================================
 if False:
 	--won't print nothing into the code
@@ -160,3 +160,12 @@ elif ..... :
 	print("Text3")
 else everything else:
 	print("Text4")
+
+=====================================================
+		Exception handling
+=====================================================
+A Python program terminates as soon as it encounters an error
+errors are two types:
+-syntax errors : no way to handle syntax errors
+-Runtime errors  --> exceptions, There is a way to handle those exceptions
+!We are handling exceptions with codint "try" and "except" block
