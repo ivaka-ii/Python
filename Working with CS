@@ -1,0 +1,63 @@
+==================================================================
+                    Overall information
+==================================================================
+when creating csv file the row after the first line is always empty
+so, add the following when opening the file fo=open(req.file,'w', newline="")
+in python2 instead of 'w', write 'wb'
+-------------------------------------------------------------------
+                    Read csv file
+-------------------------------------------------------------------
+import csv 
+req_file="C:\\Users\\Automation\\Desktop\\hi\\new_info.csv"
+
+fo=open(req_file,"r")
+content=csv.reader(fo,delimiter="|")
+#you can change the delimiter value
+for each in content:
+	print(each)
+
+fo.close()
+
+-------------------------------------------------------------------
+    Read only header and find No of colums in csv file
+-------------------------------------------------------------------
+import csv 
+req_file="C:\\Users\\Automation\\Desktop\\hi\\new_info.csv"
+
+fo=open(req_file,"r")
+content=csv.reader(fo,delimiter="|")
+#print(list(content))
+#print(f'The header is:\n {list(content)[0]}')
+#header=next(content)
+#print("The header is: ",header)
+print("The no of rows are: ",len(list(content))-1)
+'''
+for each in content:
+	print(each)
+'''
+fo.close()
+
+-------------------------------------------------------------------
+                    Create a csv file
+-------------------------------------------------------------------
+import csv
+#req_file="C:\\Users\\Automation\\Desktop\\hi\\new_info.csv"
+'''
+fo=open(req_file,'r')
+csv_reader=csv.reader(fo,delimiter="|")
+for each_row in csv_reader:
+	print(each_row)
+fo.close()
+'''
+req_file="C:\\Users\\Automation\\Desktop\\hi\\demo.csv"
+fo=open(req_file,'w',newline="")
+csv_writer=csv.writer(fo,delimiter=",")
+'''
+csv_writer.writerow(['S_No',"Name",'Age'])
+csv_writer.writerow([1,"John",23])
+csv_writer.writerow([2,"Cliton",24])
+'''
+my_data=[['S_No',"Name",'Age'],[1,"John",23],[2,"Cliton",24]]
+csv_writer.writerows(my_data)
+fo.close()
+
