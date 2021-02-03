@@ -1,0 +1,151 @@
+=====================================================
+              Functions
+=====================================================
+A function is a block of code for some specific operation
+Function code is re-usable
+A function executes only when it is called.
+
+	Why functions are used?
+	-Code reusability
+	-Improve modularity
+	
+	Types of functions:
+	Basically, we can divide functions into the following two types:
+	Built-in Functions:
+		Functions that are built into Python.
+	User-Defined Functions:
+		Functions defined by the users themselves.
+		
+Independent OS script for clearing the screen and list all files and directories:
+----------------------------------------------------------------------------------
+import os
+import time
+import platform
+def mycode(cmd1,cmd2):
+	print("Please wait. Cleaning the screen....")
+	time.sleep(2)
+	os.system(cmd1)
+	print("Please wait finding the list of dir and files")
+	time.sleep(2)
+	os.system(cmd2)
+if platform.system()=="Windows":
+	mycode("cls","dir")
+else:
+	mycode('clear','ls -lrt')
+
+----------------------------------------------------------------------------------
+				Defining functions
+----------------------------------------------------------------------------------
+def display():
+	print("Welcome to functions concept")
+	print("Simple way to define your function")
+	return None
+
+display()
+
+
+print(len("hi"))
+x=40
+print(id(x))
+
+#Rules to define function name:
+#Function name should have only a-z,A-Z,0-9, _
+#Function shuold not start with number but can it be start with _
+#Dont include any space.
+#Function must be define befor calling it
+
+
+x=(5,6)
+print(len(x))
+
+print(min(x))
+print(max(x))
+
+
+
+x="5"
+print(int(x))
+
+----------------------------------------------------------------------------------
+				Turning simple code into functions
+----------------------------------------------------------------------------------
+def welcome_msg():
+	print("Welcome to Python Scripting")
+	print("Python is easy to learn")
+	return None
+def known_concepts():
+	print("Now we are good with bascis")
+	print("We are about to start functions concepts in python")
+	return None
+def learning_concepts():
+	print("Function are very easy in python")
+	print("Now we are writing simple functions")
+	return None
+
+welcome_msg()
+known_concepts()
+learning_concepts()
+
+----------------------------------------------------------------------------------
+				Scope of variables
+----------------------------------------------------------------------------------
+The location where we can find a variable and also access it if required is called the scope of a variable.
+Local and Global variables (in or outside) of a function, first it takes local variable
+
+def myfunction1():
+	x=60  #This is local variable
+	print("Welcome to functions")
+	print("x value from fun1: ",x)
+	#myfunction2()
+	return None
+
+
+def myfunction2(y):  #Parameter
+	print("Thank you!!")
+	print("x value from fun2: ",y)
+	return None
+
+def main():
+	#global x
+	x=10 
+	myfunction1()
+	myfunction2(x)  #Argument
+	return None
+
+main()
+
+----------------------------------------------------------------------------------
+				Functions with simple arguments
+----------------------------------------------------------------------------------
+'''
+def get_result(value):  #parameters/positional arguments
+	result=value+10
+	print(f'Your result is: {result}')
+	return None
+def main():
+	#global num
+	num=eval(input("Enter your number: "))
+	get_result(num)  #Arguments
+	return None
+
+main()
+'''
+def get_add(p,q):
+	aresult=p+q
+	print(f'The addition of {p} and {q} is: {aresult}')
+	return None
+def get_sub(m,n):
+	sresult=m-n
+	print(f'The sub of {m} and {n} is: {sresult}')
+	return None
+
+def main():
+	a=eval(input("Enter your first num: "))
+	b=eval(input("Enter your second num: "))
+	get_add(a,b)
+	get_sub(a,b)
+	#x=50
+	#get_sub(19,x)
+	return None
+
+main()
