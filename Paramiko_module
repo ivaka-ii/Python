@@ -1,3 +1,51 @@
 =====================================================
-          Paramiko module
+				Paramiko module
 =====================================================
+-paramiko module will create a SSH client and by using this
+it will connect to remote server and executes cmds.
+
+- we can also transfer files from the remote machine to the local or vice versa
+using paramiko
+
+There are two ways to connect to server:
+	-usnig username and password
+	-using username and cryptographic key
+	
+We can connect to linux/Windows <-> Linux/Windows
+
+pip install paramiko
+
+					Introduction on paramiko
+------------------------------------------------------------------------------------------------------------
+#!/bin/python
+import paramiko
+ssh = paramiko.SSHClient()
+ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+#ssh.connect(hostname='3.92.79.119',username='ec2-user',password='paramiko123',port=22)
+ssh.connect(hostname='3.92.79.119',username='ec2-user',key_filename='/home/Automation/.ssh/id_rsa',port=22)
+#stdin, stdout, stderr = ssh.exec_command('whoami')
+#stdin, stdout, stderr = ssh.exec_command('uptime')
+stdin, stdout, stderr = ssh.exec_command('free -m')
+print("The output is: ")
+print(stdout.readlines())
+
+
+print("The error is: ")
+print(stderr.readlines())
+
+				Transfer file from local to remote server on paramiko
+------------------------------------------------------------------------------------------------------------
+import paramiko
+ssh = paramiko.SSHClient()
+ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+ssh.connect(hostname='54.165.97.91',username='ec2-user',password='paramiko123',port=22)
+sftp_client=ssh.open_sftp()
+
+#sftp_client.get('/home/ec2-user/paramiko_download.txt','paramiko_downloaded_file.txt')
+#sftp_client.chdir("/home/ec2-user")
+#print(sftp_client.getcwd())
+#sftp_client.get('demo.txt','C:\\Users\\Automation\\Desktop\\download_file.txt')
+sftp_client.put("transfer_files.py",'/home/ec2-user/transfer_files.py')
+sftp_client.close()
+ssh.close()
+	
