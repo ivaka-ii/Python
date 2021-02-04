@@ -4,6 +4,8 @@
 A function is a block of code for some specific operation
 Function code is re-usable
 A function executes only when it is called.
+- passing positional parameters		--you can define parameters in one function
+									then you can pass them in defined order in other functions 
 
 	Why functions are used?
 	-Code reusability
@@ -149,3 +151,121 @@ def main():
 	return None
 
 main()
+------------------------
+whenever in function is assigned variables, they are passed to other function with [function](var1, var2)
+in the new function you can define them with different names, but still Python will get the defined
+values of the first function.
+
+----------------------------------------------------------------------------------
+				Functions with arguments and return value
+----------------------------------------------------------------------------------
+!if you want to return value from function,
+in the end you are not returning "None", but "return"
+
+'''
+def get_addition(a,b):
+	result=a+b
+	#print(f"The addition of {a} and {b} is: {result}")
+	return result
+def main():
+	a=eval(input("Enter your first number: "))
+	b=eval(input("Enter your second number :"))
+	result=get_addition(a,b)
+	print(f"The addition of {a} and {b} is: {result}")
+	return None
+main()
+'''
+
+def multiply_num_10(value):
+	#result=value*10
+	#return result
+	return value*10
+
+
+def main():
+	num=eval(input("Enter your number: "))
+	result=multiply_num_10(num)
+	print("The result is: ",result)
+
+
+main() 
+
+----------------------------------------------------------------------------------
+				Functions with default arguments 
+----------------------------------------------------------------------------------
+'''
+def display(a=1):
+	print("The value of a is: ",a)
+	return None
+
+display(4)
+display(5)
+display()
+'''
+
+'''
+def add_numbers(a,b=0):
+	result=a+b
+	print("The result is: ",result)
+	return None
+add_numbers(4,5)
+add_numbers(5)
+add_numbers(7)
+'''
+
+def working_on_some(user="root"):
+	print(f"working with {user}")
+	return None
+
+working_on_some("weblogic_admin")
+
+----------------------------------------------------------------------------------
+				Functions with keyword-based arguments 
+----------------------------------------------------------------------------------
+def display(a,b):
+	print(f'a={a}')
+	return None
+
+display(3,4)
+display(a=3,b=4)
+display(b=4,a=3)
+
+----------------------------------------------------------------------------------
+				Functions with Variable lenght arguments
+----------------------------------------------------------------------------------
+* in definig function will take variables from display(var1,var2 and ...)
+def display(*arg):
+	for each in arg:
+		print(type(each))
+	return None
+#display()
+#display(4)
+display(4,5,67)
+print('-------------')
+display("hi",4.65)
+
+----------------------------------------------------------------------------------
+				Functions with Variable lenght keyword-based arguments
+----------------------------------------------------------------------------------
+** will take variable values and assign them as values from display(var1, var2 and ...)
+def display(p,**karg):
+	print(p)
+	print(karg)
+	return None
+#display(4,5)
+#display(b=5,a=4)
+#display(a=4,b=5,c=6)
+display(56,x=5,y="Hi",z=6.7,user="root")
+
+----------------------------------------------------------------------------------
+				How to use Function in one script into another script, what is __name__ 
+----------------------------------------------------------------------------------
+if we want to use in Python script another already made script:
+import [script_name]
+
+print(dir([script_name]))		-- prints all the operations that are available in the other script
+
+whenever we are defining a script and importing modules in it, at the end it has to finish with:
+
+if __name__ == '__main__':
+	main()
