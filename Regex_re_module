@@ -1,0 +1,234 @@
+=====================================================
+          Python Regular expression (re module) 
+=====================================================
+(RegEx)		-- the regex is a procedure in any language to look for a specific pattern in a given text
+Pattern		-- it is a sequence of characters, which represent miltiple strings
+ex. 'i[st]'	--> is,it
+	'python[23]'	-->python2,python3 
+r			-- string will be treated as raw string. 
+			When an 'r' or 'R' prefix is present, a character following a backslash is included in the string 
+			without change, and all backslashes are left in the string
+	
+Rules to create a pattern
+-----------------------------------------------------
+a,X,9 		-- Ordinary characters that match themselves
+[abc]		-- Matches a or b or c
+[a-zA-Z0-9]		--Matches any letter from (a to z) or (A to Z) or (0 to 9)
+\w			-- matches any letter from (a to z) or (A to Z) or (0 to 9)
+\w\w 		-- matches 2 letters close one to each other in the string 
+\w\w\w		-- same
+
+.			-- Matches any single character except newline character
+..			-- Matches any two characters
+...			-- Matches any 3 characters
+\.			-- Matches exactly the dot '.'
+
+\W			-- Matches any character not part of \w
+\d			-- Mathes any digit
+\d\d 		-- Matches 2 digits
+
+
+
+operations in re:
+-search;
+-match;
+-finditer;
+-findall;
+-split;
+-sub
+
+import re
+
+re.search(pattern,text)
+re.match(pattern,text)
+re.finditer(pattern,text)
+re.findall(pattern,text)		--finds all pattern in a given text and show them as a list
+
+--------------------------------------------------------------------------------------------	
+				regexe_pat_rules_creation.py
+--------------------------------------------------------------------------------------------
+import re
+text="This . is a python and it is easy to learn and it is popular one for dev and automation"
+'''
+my_pat= 'i[ston]' #is,it,io,in
+#print(len(re.findall(my_pat,text)))
+print(re.findall(my_pat,text))
+
+'''
+
+
+#my_pat="x[abcdeflmnopq]y" ==> xay,xby.....xqy
+#      ="x[a-fl-q]y"
+'''
+my_pat='\.'
+print(re.findall(my_pat,text))
+'''
+'''
+text="This is a ip address of my db1 server: 255.255.255.255  2456234512341234"
+
+my_pat="\d\d\d\.\d\d\d\.\d\d\d\.\d\d\d"
+print(re.findall(my_pat,text))
+'''
+
+
+'''
+text="This is python @ 345 _ - ("
+print(re.findall('\w',text))
+#print(re.findall('.',text))
+print(re.findall("\W",text))
+'''
+
+
+text="456 90 this is about deciaml re98gex"
+print(re.findall('\d\d',text))
+
+Rules to create a pattern	-part 2
+-----------------------------------------------------
+^			-- Start of the string (and start of the line in-case of multiline string)
+$			-- end of a string (and newline character in-case of multiline string)
+\b			-- Empty string at the beginning or a end of a word
+\B			-- Empty string not at the beginning or end of a word
+\t, \n, \r 	-- Matches tab, newline, return respectively
+
+	
+				regexe_pat_rules_creation_2.py
+--------------------------------------------------------------------------------------------
+import re
+text='isa python l	earn and \n itis easy 	to'
+#my_pat='^i[ts]'
+#my_pat="learn$"
+#my_pat=r"\blearn\b"
+#my_pat=r"\Blearn\B"
+my_pat=r"\n"
+print(re.findall(my_pat,text))
+
+Rules to create a pattern	-part 3
+-----------------------------------------------------
+{2}			-- any given character exactly 2 times
+{2,4}		-- character that maches from 2 to 4 times
+{2,}		-- two or more times 
++			-- one or more times
+*			-- 0 or more times
+?			-- once or none(lazy)
+
+				regexe_pat_rules_creation_3.py
+--------------------------------------------------------------------------------------------
+import re
+'''
+text="This is a pythonnnn and python aaa haaaafd xyzaaaaaaaa"
+#my_pat=r'\bpython{4}\b'
+my_pat=r'\bxyza{8}\b'
+print(re.findall(my_pat,text))
+'''
+text="xaz asdfa sdf xaaz xaaaaaaaz xaaaaz  xz"
+#my_pat=r'\bxa{2,}z\b'
+#my_pat=r'xa{1,}z'
+#my_pat=r'xa*z'   
+my_pat=r'xa?z'
+print(re.findall(my_pat,text))
+
+				regexe_pat_rules creation_flags
+--------------------------------------------------------------------------------------------
+!see the uploaded picture for more info
+
+--------------
+import re
+'''
+text="this is a string ThIs is a new staring THIS"
+my_pat=r'this'
+print(re.findall(my_pat,text,re.I))
+'''
+text="""this is a string EnD
+this is second line enD
+This is third line end
+asfasd this end"""
+#print(text)
+
+#my_pat=r'^this'
+my_pat=r'end$'
+
+print(re.findall(my_pat,text,re.M|re.I))
+
+			working with search and match operations from re module
+--------------------------------------------------------------------------------------------
+Search operation of re			-- It looks throughout the entire string and return the first match.
+re.search(pattern,string,flags)
+
+Match operation of re module 	-- It looks only at the starting of a string of a match.
+re.match(pattern.string.flags)
+
+-----------------------------------------------
+import re
+text="""This  is for
+python2 and there are two major
+vers python3 and python in future python4"""
+
+pat=r'\bpython[23]?\b'
+'''
+#print(re.findall(pat,text))
+match_ob=re.search(pat,text)
+#rint(match_ob)
+if match_ob:
+	print("match from ur pattern: ",match_ob.group())
+	print('Starting index: ',match_ob.start())
+	print('Ending index: ',match_ob.end()-1)
+	print("Length: ",match_ob.end()-match_ob.start())
+else:
+	print("No match found")
+'''
+text="""PYTHON2 and there are two major
+vers python3 and python in future python4"""
+
+pat=r'\bpython[23]?\b'
+match_ob=re.match(pat,text,re.I)
+if match_ob:
+	print("match from ur pattern: ",match_ob.group())
+	print('Starting index: ',match_ob.start())
+	print('Ending index: ',match_ob.end()-1)
+	print("Length: ",match_ob.end()-match_ob.start())
+else:
+	print("No match found")
+	
+	
+			working with findall and finditer from re module
+--------------------------------------------------------------------------------------------
+import re
+my_str="This is python and we are having python2 and python3 version"
+my_pat=r'\bpython[23]?\b'
+#print(re.search(my_pat,my_str))
+#print(len(re.findall(my_pat,my_str)))
+#print(re.findall(my_pat,my_str))
+
+for each_ob in re.finditer(my_pat,my_str):
+	print(f'The match is: {each_ob.group()} starting index: {each_ob.start()}, ending index {each_ob.end()-1}')
+
+
+					Working with split, sub and subn operations of re module
+--------------------------------------------------------------------------------------------
+re.split 		--splits given string with a word and it excludes it from the string
+re.sub			-- "substitute" re.sub(pattern,replace, string, count, flags) , replaces given word in a string
+re.subn			-- same, but it gives as an output tuple 
+
+
+							Compile operation
+--------------------------------------------------------------------------------------------
+compiling a re module cmd into object then using it shortly with re operation
+
+-------------------------------
+import re
+my_str="This is about python. Python is easy to learn  and we have two major versions: python2 and python3 "
+
+my_pat=r'\bPython[23]?\b'
+
+#print(re.search(my_pat,my_str))
+#print(re.findall(my_pat,my_str,flags=re.I))
+#print(re.split(my_pat,my_str))
+
+
+pat_ob=re.compile(my_pat,flags=re.I)
+print(pat_ob)
+print(pat_ob.search(my_str))
+print(pat_ob.findall(my_str))
+
+
+#re.findall(my_pat,my_str)===> re.complie(my_pat).findall(my_str)
