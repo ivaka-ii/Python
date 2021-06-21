@@ -1,13 +1,15 @@
 =====================================================
               Basic information
 =====================================================
-del [variable]      --deletes given variable
+del [variable]      	--deletes given variable
 variable name           -- contains letters, numbers and underscore, it shouldn't be keyword from Python
                         don't contain space, don't start with number, they are case sensitive
-ord('variable')			--gives the number of variable to ASCII code
+ord('variable')				--gives the number of variable to ASCII code
 chr('number of char')		--gives the character from the number of the ACII code
 
 var=eval(input("Enter your number: "))	-- always use eval function whenever there is a number, not a string
+
+eviron					-- A way to get all the environment variables as a dictionary
 
 types of data
 ----------------------------------------------------
