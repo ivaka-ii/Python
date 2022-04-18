@@ -1,0 +1,83 @@
+========================================
+=100 days of code challenge			   =
+========================================
+
+Day 1
+========================================
+Printing statement:
+print()
+
+!You could print with "" and whitnin the text you could switch with '' and vice versa
+!Example: print("print('what to print')")	or print('print("what to print")')
+
+\n			-- new line within a print statement 
+
+print("Hello" + " " + "Angela")		-- concatenation of different strings
+
+start to code in the beggining of the line
+
+# 
+print("Hello " + input("What is your name? "))		-- nested code input for print statement
+first it will initiate input function, then it will futfill the print statement
+
+Ctrl + l   			-- comment line
+Ctrl + z			-- uncomment line 
+
+print( len (input("") ) )		-- prints lenght of input that we type
+
+!if we have to swap two variables, we can use third one 
+a = c
+b = a
+c = b
+
+Day 2
+========================================
+Data types
+
+String			"Hello"[0] 		-- brackets shows the letter from the string starting from 0
+#Data Types
+
+#String
+print("Hello"[4])			-- prints the string letter 5 (o)
+
+#Integer
+print(123 + 345)
+print(123_456_789)
+
+#Float
+3.14159
+
+#Boolean
+True
+False
+
+PEMDASLR
+Parentheses			-- ()
+Exponents			-- **
+Multipliation		-- * 
+Division			-- / 
+Addition			-- +
+Subtraction			-- -
+
+Rounding numbers
+ex:
+print(round(8/3, 2))		-- shows the rounding result to the second number after the decimal point
+!!Advanced rounding:
+final_amount = "{:.2f}".format(bill per person)		-- givs the output the format of number up to the second digit after decimal point
+
+
+Floor division:
+print(8 // 3)				-- will show only one number and it will be in integer type
+
+Whenever we want to calculate the same value, we can use "+=" or -= and etc. to show up an updated value:
+ex.:
+score = 0
+score += 1			-- adds 1 to the score value
+print(score)		-- it will print 1
+
+f-String			-- puts different types of data and makes them printable
+ex.: 		score = 0
+			height = 1.8
+			isWinning = True
+			print(f"your score is {score}, your height is {height}, you are winning is {isWinning}")
+			
